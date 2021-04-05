@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GMap.NET.WindowsForms")]
-[assembly: AssemblyDescription("GMap.NET - Great Maps for Windows Forms")]
+[assembly: AssemblyDescription("GMap.NET.WindowsForms - Jamtycle")]
 [assembly: AssemblyProduct("GMap.NET.WindowsForms")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -16,6 +16,8 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("82e283ec-0096-4b55-baaf-89f671fa56d5")]
+[assembly: AssemblyVersion("1.8.4.21")]
+[assembly: AssemblyFileVersion("1.8.4.21")]
 
 // Version information for an assembly consists of the following four values:
 //
