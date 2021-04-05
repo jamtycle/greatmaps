@@ -43,9 +43,19 @@ namespace GMap.NET.WindowsForms.ToolTips
 
       public override void OnRender(Graphics g)
       {
+         if (this.Marker.Overlay.Control.Zoom <= 15.0) return;
+
+         float emSize = (float)Math.Ceiling(75.0 * Math.Log10(1000.0 * this.Marker.Overlay.Control.Zoom / 14619.0));
+         if (emSize <= 0.0f) emSize = 1f;
+
+         this.Font = new Font("Segoe UI", emSize, FontStyle.Bold);
+
          System.Drawing.Size st = g.MeasureString(Marker.ToolTipText, Font).ToSize();
 
-         System.Drawing.Rectangle rect = new System.Drawing.Rectangle(Marker.ToolTipPosition.X, Marker.ToolTipPosition.Y - st.Height, st.Width + TextPadding.Width * 2, st.Height + TextPadding.Height);
+         System.Drawing.Rectangle rect = new System.Drawing.Rectangle(  Marker.ToolTipPosition.X - (st.Width / 2), 
+                                                                        Marker.ToolTipPosition.Y - st.Height, 
+                                                                        st.Width + TextPadding.Width * 2, 
+                                                                        st.Height + TextPadding.Height);
          rect.Offset(Offset.X, Offset.Y);
 
          g.DrawLine(Stroke, Marker.ToolTipPosition.X, Marker.ToolTipPosition.Y, rect.X + Radius / 2, rect.Y + rect.Height - Radius / 2);
