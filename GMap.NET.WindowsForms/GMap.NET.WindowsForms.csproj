@@ -76,15 +76,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\GMap.NET.Core\Properties\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="ColorMatrixs.cs" />
-    <Compile Include="Defaults\GMapColors.cs" />
+    <Compile Include="Control\Events.cs" />
+    <Compile Include="Control\HelperLineOptions.cs" />
+    <Compile Include="Control\ScaleModes.cs" />
+    <Compile Include="Defaults\GMapBrushes.cs" />
+    <Compile Include="Defaults\GMapPens.cs" />
     <Compile Include="Defaults\GMapFonts.cs" />
     <Compile Include="GMapControl.cs">
       <SubType>UserControl</SubType>

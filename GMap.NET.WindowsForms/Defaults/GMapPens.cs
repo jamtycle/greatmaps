@@ -8,7 +8,7 @@ namespace GMap.NET.WindowsForms.Defaults
    /// <summary>
    /// Colors default values. WindowsForms ONLY!
    /// </summary>
-   public static class GMapColors
+   public static class GMapPens
    {
       /// <summary>
       /// Equivalent to MidnightBlue with Alpha (140)
@@ -18,11 +18,9 @@ namespace GMap.NET.WindowsForms.Defaults
       /// Equivalent to Red
       /// </summary>
       public static readonly Pen stroke_red = new Pen(Color.Red) { Width = 1, LineJoin = System.Drawing.Drawing2D.LineJoin.Round, StartCap = System.Drawing.Drawing2D.LineCap.RoundAnchor };
-
-
       /// <summary>
-      /// Equivalent to AliceBlue with Alpha (222)
+      /// Equivalent to White
       /// </summary>
-      public static readonly Brush fill_alice_blue = new SolidBrush(Color.FromArgb(222, Color.AliceBlue));
+      public static readonly Pen stroke_white = new Pen(Color.White) { Width = 1, LineJoin = System.Drawing.Drawing2D.LineJoin.Round, StartCap = System.Drawing.Drawing2D.LineCap.RoundAnchor };
    }
 }

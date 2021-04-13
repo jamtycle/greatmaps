@@ -11,7 +11,7 @@ namespace GMap.NET.WindowsForms.Markers
    public class GMarkerCross : GMapMarker, ISerializable
    {
       [NonSerialized]
-      private Pen pen = Defaults.GMapColors.stroke_red;
+      private Pen pen = Defaults.GMapPens.stroke_red;
 
       /// <summary>
       /// Marker Contructor

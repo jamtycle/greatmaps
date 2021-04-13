@@ -32,12 +32,12 @@ namespace GMap.NET.WindowsForms.ToolTips
       /// specifies how the outline is painted
       /// </summary>
       [NonSerialized]
-      private Pen stroke = GMapColors.stroke_blue;
+      private Pen stroke = GMapPens.stroke_blue;
       /// <summary>
       /// background color
       /// </summary>
       [NonSerialized]
-      private Brush fill_color = GMapColors.fill_alice_blue;
+      private Brush fill_color = GMapBrushes.fill_alice_blue;
       /// <summary>
       /// text foreground
       /// </summary>
