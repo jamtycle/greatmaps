@@ -78,7 +78,11 @@ namespace GMap.NET.WindowsForms.ToolTips
             objGP.CloseFigure();
 
             g.FillPath(FillColor, objGP);
-            g.DrawPath(Stroke, objGP);
+            using (Pen pen = new Pen(StrokeColor, StrokeWidth))
+               g.DrawPath(pen, objGP);
+            //new Pen(Stroke.Brush, Stroke.Width);
+            //try { g.DrawPath(Stroke, objGP); }
+            //catch { }
          }
       }
 

@@ -31,8 +31,17 @@ namespace GMap.NET.WindowsForms.ToolTips
       /// <summary>
       /// specifies how the outline is painted
       /// </summary>
+      [Obsolete]
       [NonSerialized]
       private Pen stroke = GMapPens.stroke_blue;
+      /// <summary>
+      /// Set the outline color.
+      /// </summary>
+      private Color stroke_color;
+      /// <summary>
+      /// Set the outline width.
+      /// </summary>
+      private float stroke_width;
       /// <summary>
       /// background color
       /// </summary>
@@ -91,10 +100,13 @@ namespace GMap.NET.WindowsForms.ToolTips
          Rectangle rect = new Rectangle(new Point(Marker.ToolTipPosition.X, Marker.ToolTipPosition.Y - st.Height), new Size(st.Width + text_padding.Width, st.Height + text_padding.Height));
          rect.Offset(offset.X, offset.Y);
 
-         g.DrawLine(stroke, Marker.ToolTipPosition.X, Marker.ToolTipPosition.Y, rect.X, rect.Y + rect.Height / 2);
+         using (Pen pen = new Pen(stroke_color, stroke_width))
+         {
+            g.DrawLine(pen, Marker.ToolTipPosition.X, Marker.ToolTipPosition.Y, rect.X, rect.Y + rect.Height / 2);
 
-         g.FillRectangle(fill_color, rect);
-         g.DrawRectangle(stroke, rect);
+            g.FillRectangle(fill_color, rect);
+            g.DrawRectangle(pen, rect);
+         }
 
          g.DrawString(Marker.ToolTipText, font, foreground_color, rect, format);
       }
@@ -171,10 +183,19 @@ namespace GMap.NET.WindowsForms.ToolTips
       /// Gets or Sets the Font.
       /// </summary>
       public Font Font { get => font; set => font = value; }
+      [Obsolete(@"The reason why the stroke property is not longer in obsolete, is because a bug related with the use of Pens without a using()", true)]
       /// <summary>
       /// Gets or Sets the Stroke.
       /// </summary>
       public Pen Stroke { get => stroke; set => stroke = value; }
+      /// <summary>
+      /// Gets or Sets the StrokeColor
+      /// </summary>
+      public Color StrokeColor { get => stroke_color; set => stroke_color = value; }
+      /// <summary>
+      /// Gets or Sets the StrokeWidth
+      /// </summary>
+      public float StrokeWidth { get => stroke_width; set => stroke_width = value; }
       /// <summary>
       /// Gets or Sets the Fill Color.
       /// </summary>
